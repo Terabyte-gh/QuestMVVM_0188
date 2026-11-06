@@ -1,8 +1,10 @@
 package com.example.pertemuan8.model
 
+import com.example.pertemuan8.R
+
 object DataJK {
     val JenisJK = listof (
-        R.string.lakki,
+        R.string.laki,
         R.string.wanita
     )
 }
