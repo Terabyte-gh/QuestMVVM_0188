@@ -12,10 +12,10 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.pertemuan8..model.DataJK.JenisK
 import com.example.pertemuan8.view.FormSiswa
 import com.example.pertemuan8.view.TampilSiswa
 import com.example.pertemuan8.viewmodel.SiswaViewModel
+import com.example.pertemuan8.model.DataJK
 
 enum class Navigasi {
     Formulir,
@@ -43,7 +43,7 @@ fun SiswaApp(
                 val konteks = LocalContext.current
                 FormSiswa(
                     //edit 4 : parameter pilihanJK dan onSubmitButtonClicked
-                    pilihanJK = JenisK.map { id -> konteks.resources.getString(id) },
+                    pilihanJK = DataJK.JenisK.map { id -> konteks.resources.getString(id) },
                     onSubmitButtonClicked = {
                         viewModel.setSiswa(it)
                         navController.navigate(Navigasi.Detail.name)
